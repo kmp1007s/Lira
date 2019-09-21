@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1000.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainStageController">
+   <children>
+      <VBox layoutX="100.0" layoutY="20.0" prefHeight="480.0" prefWidth="800.0">
+         <children>
+            <Label fx:id="label1" alignment="CENTER" prefHeight="480.0" prefWidth="800.0" text="Label" textOverrun="CLIP">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+         </children>
+      </VBox>
+      <HBox layoutX="100.0" layoutY="520.0" prefHeight="80.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="lineValue1" />
+                  <TextField fx:id="lineValue2" />
+                  <TextField fx:id="lineValue3" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
