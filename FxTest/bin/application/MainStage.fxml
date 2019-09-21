@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -12,15 +14,30 @@
    <children>
       <VBox layoutX="100.0" layoutY="60.0" prefHeight="480.0" prefWidth="800.0">
          <children>
-            <Label fx:id="label1" alignment="CENTER" prefHeight="480.0" prefWidth="800.0" text="Label" textOverrun="CLIP">
+            <Label fx:id="label1" alignment="CENTER" prefHeight="480.0" prefWidth="800.0" textOverrun="CLIP">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/lyra.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
          </children>
       </VBox>
       <HBox layoutX="100.0" layoutY="560.0" prefHeight="30.0" prefWidth="800.0">
          <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../Image/line.png" />
+               </image>
+            </ImageView>
             <VBox prefHeight="80.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="lineValue1" />
@@ -32,7 +49,7 @@
          <right>
             <HBox alignment="CENTER" prefWidth="20.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="closeBtn" alignment="CENTER_RIGHT" onMouseClicked="#close" text="X" textAlignment="CENTER">
+                  <Label fx:id="closeBtn" alignment="CENTER_RIGHT" onMouseClicked="#close" onMousePressed="#closePressed" text="X" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin></Label>

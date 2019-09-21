@@ -1,8 +1,11 @@
 package application;
 
 import com.dgsw.tcpcom.TcpClient;
+
+import javafx.animation.ScaleTransition;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.BlurType;
@@ -10,11 +13,11 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 public class MainStageController {
 
 	public MainStageController() {
-
 		super();
 	}
 
@@ -24,6 +27,8 @@ public class MainStageController {
 	private TextField lineValue1;
 	@FXML
 	private BorderPane windowBar;
+	@FXML
+	private Label closeBtn;
 	
 	/** 윈도우 창 종료하기
 	 * @param evt 라벨 클릭
@@ -32,6 +37,24 @@ public class MainStageController {
 	public void close(MouseEvent evt) {
 		
 		((Label)evt.getSource()).getScene().getWindow().hide();
+	}
+	
+	@FXML
+	public void closePressed(MouseEvent evt) {
+		
+		closeBtn.setStyle("-fx-background-color:lightgray;" );
+		
+		scaleAnimation(closeBtn);
+	}
+	
+	public void scaleAnimation(Node node) {
+		
+		ScaleTransition st = new ScaleTransition(Duration.millis(10), node);
+        st.setFromX(1);
+        st.setFromY(1);
+        st.setToX(1.5);
+        st.setToY(1.5);
+        st.play();
 	}
 	
 	private TcpClient client = new TcpClient("10.80.163.8", 5200);
@@ -173,7 +196,7 @@ public class MainStageController {
 
 		label1.setEffect(getDefaultDropShadow());
 
-		label1.setText("Lira");
+		//label1.setText("Lira");
 		lineValue1.setText("1");
 
 		label1.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -182,8 +205,7 @@ public class MainStageController {
 			public void handle(MouseEvent event) {
 
 				logAll(event);
-
-				sendToServer(event);
+				sendToServer(event);	
 			}
 		});
 	}

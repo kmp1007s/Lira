@@ -28,7 +28,7 @@
 
 #closeBtn {
 	-fx-font-size: 17px;
-	-fx-text-fill: red;
+	-fx-text-fill: #e9161f;
 }
 
 AnchorPane {
