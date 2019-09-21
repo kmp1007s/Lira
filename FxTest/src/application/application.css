@@ -6,7 +6,7 @@
 }
 
 #label1{
-	-fx-font-size: 44pt;
+	-fx-font-size: 44px;
 	-fx-font-weight: lighter;
 	-fx-background-color: white;
 	-fx-background-radius: 10;
@@ -19,6 +19,16 @@
 #lineValue1:focused,#lineValue2:focused,#lineValue3:focused { 
 	-fx-focus-color : transparent;
 	-fx-faint-focus-color: transparent;
+}
+
+
+#windowBar {
+	-fx-background-color: white;
+}
+
+#closeBtn {
+	-fx-font-size: 17px;
+	-fx-text-fill: red;
 }
 
 AnchorPane {

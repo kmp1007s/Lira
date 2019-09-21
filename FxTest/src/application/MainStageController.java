@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
 public class MainStageController {
@@ -19,11 +20,21 @@ public class MainStageController {
 
 	@FXML
 	private Label label1;
-
 	@FXML
 	private TextField lineValue1;
-
-	private TcpClient client = new TcpClient("192.168.137.70", 5200);
+	@FXML
+	private BorderPane windowBar;
+	
+	/** 윈도우 창 종료하기
+	 * @param evt 라벨 클릭
+	 */
+	@FXML
+	public void close(MouseEvent evt) {
+		
+		((Label)evt.getSource()).getScene().getWindow().hide();
+	}
+	
+	private TcpClient client = new TcpClient("10.80.163.8", 5200);
 
 	public DropShadow getDefaultDropShadow() {
 
