@@ -1,21 +1,26 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
-#label1{
+*{
 	-fx-font-family: "Noto Sans" , "Noto Sans CJK KR";
+	-fx-text-fill: gray;
+}
+
+#label1{
 	-fx-font-size: 44pt;
 	-fx-font-weight: lighter;
-	-fx-text-fill: #333;
-	/*
-	-fx-border-color: #ff69b4;
-	-fx-border-radius: 15;*/
 	-fx-background-color: white;
 	-fx-background-radius: 10;
 }
 
+#lineValue1 {
+	-fx-padding: 6px;
+}
+
 #lineValue1:focused,#lineValue2:focused,#lineValue3:focused { 
-	-fx-focus-color : #333;
+	-fx-focus-color : transparent;
+	-fx-faint-focus-color: transparent;
 }
 
 AnchorPane {
-	-fx-background-color: #333;
+	-fx-background-color: linear-gradient(to right, #00c6ff, #0072ff);
 }

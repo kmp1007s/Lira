@@ -22,8 +22,6 @@
             <VBox prefHeight="80.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="lineValue1" />
-                  <TextField fx:id="lineValue2" />
-                  <TextField fx:id="lineValue3" />
                </children>
             </VBox>
          </children>

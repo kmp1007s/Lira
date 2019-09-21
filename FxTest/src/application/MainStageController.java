@@ -1,6 +1,5 @@
 package application;
 
-import java.util.List;
 import com.dgsw.tcpcom.TcpClient;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -23,12 +22,8 @@ public class MainStageController {
 
 	@FXML
 	private TextField lineValue1;
-	@FXML
-	private TextField lineValue2;
-	@FXML
-	private TextField lineValue3;
 
-	private TcpClient client = new TcpClient("10.80.163.159", 5200);
+	private TcpClient client = new TcpClient("192.168.137.70", 5200);
 
 	public DropShadow getDefaultDropShadow() {
 
@@ -36,7 +31,7 @@ public class MainStageController {
 
 		dropShadow.setBlurType(BlurType.GAUSSIAN);
 
-		dropShadow.setColor(Color.LIGHTGRAY);
+		dropShadow.setColor(Color.GRAY);
 
 		dropShadow.setHeight(20);
 
@@ -48,22 +43,6 @@ public class MainStageController {
 		dropShadow.setOffsetY(0);
 
 		return dropShadow;
-	}
-
-	/** 서버로 전송 시 라인에 null값이 들어가는 것을 방지
-	 * 
-	 * @param lineList 줄 객체의 리스트
-	 */
-	public void preventNullInLine(List<TextField> lineList) {
-
-		for (TextField line : lineList) {
-
-			if (line.getText() == null) {
-
-				System.out.println("line: " + line);
-				line.setText("1");
-			}
-		}
 	}
 
 	/** 터치패드에 입력된 좌표를 로그로 남김
@@ -183,20 +162,13 @@ public class MainStageController {
 
 		label1.setEffect(getDefaultDropShadow());
 
-		label1.setText("TOUCH PAD");
+		label1.setText("Lira");
+		lineValue1.setText("1");
 
 		label1.setOnMousePressed(new EventHandler<MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent event) {
-
-//				List<TextField> lineList = new ArrayList<TextField>();
-//
-//				lineList.add(lineValue1);
-//				lineList.add(lineValue2);
-//				lineList.add(lineValue3);
-//
-//				preventNullInLine(lineList);
 
 				logAll(event);
 

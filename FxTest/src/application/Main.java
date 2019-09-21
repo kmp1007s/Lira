@@ -31,7 +31,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			
 			primaryStage.setResizable(false);
-			primaryStage.setTitle("너흥다깨 테스트 클라이언트");
+			primaryStage.setTitle("Lira");
 			
 			//primaryStage.getIcons().add(new Image("icon.png"));
 			

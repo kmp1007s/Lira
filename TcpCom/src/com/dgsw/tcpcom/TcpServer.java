@@ -27,6 +27,7 @@ public class TcpServer {
 
 	public void ServerRun() throws IOException {
 
+		
 		try {
 			server = new ServerSocket(port);
 			while (true) {
